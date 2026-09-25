@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DP Study Centre — ICSE Study Resources</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f7fb;
+  color: #172033;
+  line-height: 1.6;
+}
+
+header {
+  background: linear-gradient(135deg, #172554, #2563eb);
+  color: white;
+  padding: 55px 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+nav {
+  background: white;
+  padding: 15px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 10px rgba(0,0,0,.08);
+}
+
+nav a {
+  text-decoration: none;
+  color: #1d4ed8;
+  font-weight: bold;
+  margin: 0 12px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 30px 18px;
+}
+
+.hero {
+  background: white;
+  border-radius: 18px;
+  padding: 30px;
+  margin-bottom: 25px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0,0,0,.07);
+}
+
+.hero h2 {
+  color: #1d4ed8;
+  margin-bottom: 10px;
+}
+
+.search {
+  width: 100%;
+  max-width: 600px;
+  padding: 15px;
+  border: 2px solid #dbe3f0;
+  border-radius: 12px;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.section-title {
+  margin: 35px 0 18px;
+  font-size: 28px;
+  color: #172554;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 5px 18px rgba(0,0,0,.07);
+  transition: .2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card h3 {
+  color: #1d4ed8;
+  margin-bottom: 8px;
+}
+
+.card p {
+  color: #64748b;
+  margin-bottom: 15px;
+}
+
+.btn {
+  display: inline-block;
+  background: #2563eb;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 9px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background: #1d4ed8;
+}
+
+footer {
+  margin-top: 50px;
+  background: #172033;
+  color: white;
+  text-align: center;
+  padding: 30px 15px;
+}
+
+.hidden {
+  display: none;
+}
+
+@media(max-width:600px) {
+  header h1 {
+    font-size: 32px;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 5px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>DP Study Centre</h1>
+  <p>ICSE Study Resources • Notes • Revision • Learning</p>
+</header>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#subjects">Subjects</a>
+  <a href="#resources">Resources</a>
+  <a href="#about">About</a>
+</nav>
+
+<main class="container" id="home">
+
+  <section class="hero">
+    <h2>Welcome to DP Study Centre</h2>
+    <p>
+      Your simple study hub for ICSE students.
+      Find notes, revision material and useful study resources in one place.
+    </p>
+
+    <input
+      type="text"
+      id="search"
+      class="search"
+      placeholder="Search subjects or resources..."
+      onkeyup="searchCards()"
+    >
+  </section>
+
+  <h2 class="section-title" id="subjects">Subjects</h2>
+
+  <section class="grid">
+
+    <div class="card searchable">
+      <h3>📚 History & Civics</h3>
+      <p>Study notes, important topics and revision material.</p>
+      <a class="btn" href="#resources">Explore</a>
+    </div>
+
+    <div class="card searchable">
+      <h3>🌍 Geography</h3>
+      <p>Important concepts, maps and revision resources.</p>
+      <a class="btn" href="#resources">Explore</a>
+    </div>
+
+    <div class="card searchable">
+      <h3>🧮 Mathematics</h3>
+      <p>Practice concepts and prepare for examinations.</p>
+      <a class="btn" href="#resources">Explore</a>
+    </div>
+
+    <div class="card searchable">
+      <h3>🔬 Science</h3>
+      <p>Physics, Chemistry and Biology study resources.</p>
+      <a class="btn" href="#resources">Explore</a>
+    </div>
+
+    <div class="card searchable">
+      <h3>📖 English</h3>
+      <p>Literature, grammar and language revision resources.</p>
+      <a class="btn" href="#resources">Explore</a>
+    </div>
+
+    <div class="card searchable">
+      <h3>💻 Computer Applications</h3>
+      <p>Programming concepts and computer-study material.</p>
+      <a class="btn" href="#resources">Explore</a>
+    </div>
+
+  </section>
+
+  <h2 class="section-title" id="resources">Study Resources</h2>
+
+  <section class="grid">
+
+    <div class="card searchable">
+      <h3>📝 Notes</h3>
+      <p>Organised notes for quick revision.</p>
+      <a class="btn" href="#">Open Notes</a>
+    </div>
+
+    <div class="card searchable">
+      <h3>📄 Question Papers</h3>
+      <p>Practice questions and examination preparation.</p>
+      <a class="btn" href="#">Open Papers</a>
+    </div>
+
+    <div class="card searchable">
+      <h3>⭐ Important Questions</h3>
+      <p>Useful questions for revision and practice.</p>
+      <a class="btn" href="#">View Questions</a>
+    </div>
+
+    <div class="card searchable">
+      <h3>📌 Quick Revision</h3>
+      <p>Short revision material for studying before exams.</p>
+      <a class="btn" href="#">Start Revision</a>
+    </div>
+
+  </section>
+
+  <section id="about" class="hero" style="margin-top:35px;">
+    <h2>About DP Study Centre</h2>
+    <p>
+      DP Study Centre is a student-focused website designed to organise
+      useful ICSE study resources in one convenient place.
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  <h3>DP Study Centre</h3>
+  <p>Learn • Revise • Practice • Succeed</p>
+  <p style="margin-top:10px;">© 2026 DP Study Centre</p>
+</footer>
+
+<script>
+function searchCards() {
+  const input = document
+    .getElementById("search")
+    .value
+    .toLowerCase();
+
+  const cards = document.querySelectorAll(".searchable");
+
+  cards.forEach(card => {
+    const text = card.innerText.toLowerCase();
+
+    if (text.includes(input)) {
+      card.classList.remove("hidden");
+    } else {
+      card.classList.add("hidden");
+    }
+  });
+}
+</script>
+
+</body>
+</html>
